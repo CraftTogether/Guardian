@@ -1,3 +1,5 @@
+package com.github.crafttogether.hydroperms;
+
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class HydroPerms extends JavaPlugin {
