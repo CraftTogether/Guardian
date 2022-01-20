@@ -1,4 +1,4 @@
 name: com.github.crafttogether.hydroperms.HydroPerms
 version: '${version}'
 api-version: 1.18
-main: com.crafttogether.hydroperms.com.github.crafttogether.hydroperms.HydroPerms
+main: com.github.crafttogether.hydroperms.HydroPerms
