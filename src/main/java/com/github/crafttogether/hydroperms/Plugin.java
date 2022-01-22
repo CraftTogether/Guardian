@@ -9,9 +9,17 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 
-public class HydroPerms extends JavaPlugin {
+public class Plugin extends JavaPlugin {
 
-    JavaPlugin plugin;
+    private static JavaPlugin plugin;
+
+    public static JavaPlugin getInstance() {
+        return plugin;
+    }
+
+    public static String getFilePath() {
+        return getInstance().getDataFolder().getParentFile() + "/permissions.json";
+    }
 
     @Override
     public void onEnable() {
@@ -19,7 +27,7 @@ public class HydroPerms extends JavaPlugin {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
         try {
-            getConfig().load(Files.newBufferedReader(Path.of(getDataFolder() + "/config.yml")));
+            getConfig().load(Files.newBufferedReader(Path.of(getFilePath())));
         } catch (IOException | InvalidConfigurationException e) {
             e.printStackTrace();
         }
