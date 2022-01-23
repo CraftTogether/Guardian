@@ -1,5 +1,10 @@
 package com.github.crafttogether.hydroperms;
 
+import com.github.crafttogether.kelp.Kelp;
+import com.github.crafttogether.rinku.Connection;
+import com.github.crafttogether.rinku.Rinku;
+import net.dv8tion.jda.api.entities.Guild;
+import net.dv8tion.jda.api.entities.Member;
 import org.bukkit.entity.Player;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -7,18 +12,18 @@ import org.json.JSONObject;
 public class Guardien {
 
     public boolean has(Permissions permission, Player player) {
-        final JSONArray members = Members.get();
-        for (int i = 0; i < members.length(); i++) {
-            final JSONObject data = members.getJSONObject(i);
+        final Connection connection = Rinku.find(c -> c.getMinecraft().equals(player.getUniqueId().toString()));
+        if (connection == null) return false;
 
-            final String discordId = data.getString("discord");
-            final String minecraftUuid = data.getString("minecraft");
+        final String guildId = Plugin.getInstance().getConfig().getString("guildId");
 
-            // TODO Actual check
+        final Guild guild = Kelp.getClient().getGuildById(guildId);
+        if (guild == null) throw new IllegalArgumentException("Cannot find a guild with the id " + guildId);
+        final Member member = guild.retrieveMemberById(connection.getDiscord()).complete();
+        if (member == null) return false;
 
-        }
-
-        return false;
+        final boolean hasRole = member.getRoles().stream().anyMatch(role -> permission.getRolesIds().contains(role.getId()));
+        return hasRole;
     }
 
 }

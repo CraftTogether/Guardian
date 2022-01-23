@@ -1,2 +1,7 @@
-moderator:
-administration:
+moderators:
+  - EXAMPLE1
+  - EXAMPLE2
+administrators:
+  - EXAMPLE1
+  - EXAMPLE2
+guildId: GUILD_ID

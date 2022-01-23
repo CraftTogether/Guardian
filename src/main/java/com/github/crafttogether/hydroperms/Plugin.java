@@ -17,20 +17,13 @@ public class Plugin extends JavaPlugin {
         return plugin;
     }
 
-    public static String getFilePath() {
-        return getInstance().getDataFolder().getParentFile() + "/permissions.json";
-    }
-
     @Override
     public void onEnable() {
         plugin = this;
+
         getConfig().options().copyDefaults();
         saveDefaultConfig();
-        try {
-            getConfig().load(Files.newBufferedReader(Path.of(getFilePath())));
-        } catch (IOException | InvalidConfigurationException e) {
-            e.printStackTrace();
-        }
+
         Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "HydroPerms loaded");
     }
 
