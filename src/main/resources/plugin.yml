@@ -1,4 +1,4 @@
-name: com.github.crafttogether.guardian.Plugin
+name: Guardian
 version: '${version}'
 api-version: 1.18
-main: com.github.crafttogether.guardian.Plugin
+main: com.github.crafttogether.hydroperms.HydroPerms
