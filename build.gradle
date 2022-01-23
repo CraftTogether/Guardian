@@ -16,7 +16,7 @@ repositories {
 
 dependencies {
     compileOnly "io.papermc.paper:paper-api:1.18.1-R0.1-SNAPSHOT"
-    implementation "org.json:json:20201115"
+    implementation 'org.json:json:20211205'
     compileOnly "com.github.CraftTogether:Kelp:1.0"
     compileOnly "net.dv8tion:JDA:5.0.0-alpha.4"
     compileOnly "com.github.CraftTogether:Rinku:1.0-SNAPSHOT-1"
