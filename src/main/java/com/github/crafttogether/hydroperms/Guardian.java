@@ -6,10 +6,8 @@ import com.github.crafttogether.rinku.Rinku;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
 import org.bukkit.entity.Player;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
-public class Guardien {
+public class Guardian {
 
     public boolean has(Permissions permission, Player player) {
         final Connection connection = Rinku.find(c -> c.getMinecraft().equals(player.getUniqueId().toString()));
