@@ -1,13 +1,8 @@
-package com.github.crafttogether.hydroperms;
+package com.github.crafttogether.guardian;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.plugin.java.JavaPlugin;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 
 public class Plugin extends JavaPlugin {
 
@@ -24,11 +19,11 @@ public class Plugin extends JavaPlugin {
         getConfig().options().copyDefaults();
         saveDefaultConfig();
 
-        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "HydroPerms loaded");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "Guardian loaded");
     }
 
     @Override
     public void onDisable() {
-        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "HydroPerms disabled");
+        Bukkit.getConsoleSender().sendMessage(ChatColor.RED + "Guardian disabled");
     }
 }

@@ -1,4 +1,4 @@
-package com.github.crafttogether.hydroperms;
+package com.github.crafttogether.guardian;
 
 import com.github.crafttogether.kelp.Kelp;
 import com.github.crafttogether.rinku.Connection;
