@@ -2,3 +2,5 @@ name: Guardian
 version: '${version}'
 api-version: 1.18
 main: com.github.crafttogether.guardian.Plugin
+depend:
+  - Rinku
